@@ -1,0 +1,87 @@
+body {
+  background: #F4F4F4;
+  margin:10px 60px;
+  font-family: Georgia, Times, serif;
+}
+
+.next-button {
+  background: url(/images/right_arrow.png);
+  width:50px;
+  height:50px;
+  position:absolute;
+  right:4px;
+  top:50%;
+  margin-top:-25px;
+  border:none;
+}
+
+.prev-button {
+  background: url(/images/left_arrow.jpg);
+  width:50px;
+  height:50px;
+  position:absolute;
+  left:4px;
+  top:50%;
+  margin-top:-25px;
+  border:none;
+}
+
+.tile-text {
+  -moz-box-shadow: 3px 3px 3px #666;
+  -webkit-box-shadow: 3px 3px 3px #666;
+  box-shadow: 3px 3px 3px #666;
+  border:1px solid #CCC;
+  padding:8px;
+  background:#FFF;
+  min-height:300px;
+  padding:20px 40px;
+  font-size:20px;
+}
+
+.tile-image {
+  width:400px;
+  height:400px;
+  overflow:hiddden;
+}
+
+.tile-video {
+  -moz-box-shadow: 3px 3px 3px #666;
+  -webkit-box-shadow: 3px 3px 3px #666;
+  box-shadow: 3px 3px 3px #666;
+  width:500px;
+  height:340px;
+  overflow:hidden;
+  padding:10px 20px;
+  margin: 0 auto 30px;
+  position:relative;
+}
+
+.tile-image img {
+  width:400px;
+  -moz-box-shadow: 3px 3px 3px #666;
+  -webkit-box-shadow: 3px 3px 3px #666;
+}
+
+.item-caption {
+  height:24px;
+  font-size:12px;
+  font-weight:bold;
+  padding:8px;
+  position:absolute;
+  bottom:4px;
+}
+
+.footnote {
+  min-height:0px;
+  font-size:14px;
+}
+
+.caption {
+  min-height:0px;
+  font-size:16px;
+}
+
+table td {
+  padding: 40px;
+  text-align:center;
+}

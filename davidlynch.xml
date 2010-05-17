@@ -1,0 +1,8 @@
+<story title="David Lynch" schema="1" version="1">
+  <author name="scott persinger" pubDate="2010-05-13"/>
+  <page name="911">
+    <tile type="audio">
+      <embed type="application/x-shockwave-flash" width="350" 	height="24" 	allowfullscreen="true" 	allowscriptaccess="always" 	src="http://www.archive.org/flow/flowplayer.commercial-3.0.5.swf" 	w3c="true" 	flashvars='config={"key":"#$b6eb72a0f2f1e29f3d4","playlist":[{"url":"http://www.archive.org/download/AlexJonesInterviewsDavidLynch/020207_lynch_bb_vbr.mp3","autoPlay":false}],"clip":{"autoPlay":true},"canvas":{"backgroundColor":"0x000000","backgroundGradient":"none"},"plugins":{"audio":{"url":"http://www.archive.org/flow/flowplayer.audio-3.0.3-dev.swf"},"controls":{"playlist":false,"fullscreen":false,"gloss":"high","backgroundColor":"0x000000","backgroundGradient":"medium","sliderColor":"0x777777","progressColor":"0x777777","timeColor":"0xeeeeee","durationColor":"0x01DAFF","buttonColor":"0x333333","buttonOverColor":"0x505050"}},"contextMenu":[{"Listen+to+AlexJonesInterviewsDavidLynch+at+archive.org":"function()"},"-","Flowplayer 3.0.5"]}'> </embed>
+    </tile>
+  </page>
+</story>

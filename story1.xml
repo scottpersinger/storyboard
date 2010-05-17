@@ -1,0 +1,34 @@
+<story title="joseph kittinger" schema="1" version="1">
+  <author name="scott persinger" pubDate="2010-05-13"/>
+  <page name="intro" columns="2">
+    <tile columns="2" type="text">
+      Joseph Kittinger was a pioneering pilot and captain in the U.S. Army. Before the Apollo space program, Kittinger was the first man to enter outer space. He did so in a baloon, for a military project intended to test the effects of high altitude and descent back to earth.
+    </tile>
+    <tile columns="2" type="text" style="footnote">
+      Text content from Wikipedia.com. Images and video attributions at the end.
+    </tile>
+  </page>
+
+  <page name="early career" columns="2">
+    <tile type="text">
+      In 1954 Kittinger was transferred to Holloman AFB, New Mexico and the Air Force Missile Development Center (AFMDC). He flew the observation/chase plane which monitored flight surgeon Colonel John Paul Stapp's rocket sled run of 632 mph (1,017 km/h) in 1955. Kittinger was impressed by Stapp's dedication and leadership as a pioneer in aerospace medicine. Stapp, in turn, was impressed with Kittinger's skillful jet piloting, later recommending him for space-related aviation research work. Stapp was to foster the high altitude balloon tests which would later lead to Kittinger's record-setting leap from over 102,000 feet. In 1957, as part of Project Manhigh, Kittenger set an interim balloon altitude record of 96,760 feet (29,500 m) in Manhigh I, for which he was awarded his first Distinguished Flying Cross.
+    </tile>
+
+    <tile type="image" src="http://hawtaction.com/2008/06/13/483px-Joseph_Kittinger.jpg" />
+  </page>
+
+  <page name="project excelsior" columns="1">
+    <tile type="video" caption="Davvan Cowboy music video - footage from balloon flight of J. Kittinger.">
+      <youtube url="http://www.youtube.com/watch?v=5BOK1aMIhp4&feature=related" />
+    </tile>
+    <tile type="text" style="caption">
+      Captain Kittinger was next assigned to the Aerospace Medical Research Laboratories at Wright-Patterson AFB in Dayton, Ohio. For Project Excelsior (meaning "ever upward"), a name given to the project by Col. Stapp, as part of research into high altitude bailouts, he made a series of three extreme altitude parachute jumps from an open gondola carried aloft by large helium balloons.
+    </tile>
+  </page>
+
+  <page name="conclusion">
+    <tile type="text">
+      Thank you.
+    </tile>
+  </page>
+</story>
