@@ -1,0 +1,11 @@
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    font-size:0;
+}
+
+/* clearfix alternative */
+.clear-auto { overflow: auto; }

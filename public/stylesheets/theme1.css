@@ -1,5 +1,14 @@
+page-wrapper {
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
 body {
-  background: #F4F4F4;
+  background: #444 url(http://line25.com/wp-content/uploads/2009/letterpress/demo/bg.png);
   margin:10px 60px;
   font-family: Georgia, Times, serif;
 }
@@ -26,21 +35,25 @@ body {
   border:none;
 }
 
+body {
+  color:#999;
+  text-shadow: #2A2A2A 0px 3px 8px;
+}
+
 .tile-text {
+  /*
   -moz-box-shadow: 3px 3px 3px #666;
   -webkit-box-shadow: 3px 3px 3px #666;
+  -webkit-border-radius: 8px;
   box-shadow: 3px 3px 3px #666;
   border:1px solid #CCC;
-  padding:8px;
   background:#FFF;
-  min-height:300px;
-  padding:20px 40px;
+  opacity:0.8;
+  */
   font-size:20px;
 }
 
 .tile-image {
-  width:400px;
-  height:400px;
   overflow:hiddden;
 }
 
@@ -48,16 +61,11 @@ body {
   -moz-box-shadow: 3px 3px 3px #666;
   -webkit-box-shadow: 3px 3px 3px #666;
   box-shadow: 3px 3px 3px #666;
-  width:500px;
-  height:340px;
   overflow:hidden;
-  padding:10px 20px;
-  margin: 0 auto 30px;
   position:relative;
 }
 
 .tile-image img {
-  width:400px;
   -moz-box-shadow: 3px 3px 3px #666;
   -webkit-box-shadow: 3px 3px 3px #666;
 }
@@ -72,7 +80,7 @@ body {
 }
 
 .footnote {
-  min-height:0px;
+  min-height:30px;
   font-size:14px;
 }
 

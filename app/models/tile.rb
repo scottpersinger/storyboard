@@ -7,6 +7,7 @@ class Tile
     @columns = xml.attributes['columns'] ? xml.attributes['columns'].text.to_i : 1
     @style = xml.attributes['style'] ? xml.attributes['style'].text : nil
     @content = xml.inner_html
+    @last_column= xml.attributes['break'] ? (xml.attributes['break'].text == 'true') : false
 
     @attrs = {}
 
@@ -22,8 +23,21 @@ class Tile
     end
   end
 
+  def last_col?
+    @last_column
+  end
+  
   def method_missing(key, *args)
     @attrs[key]
+  end
+
+  def resources
+    case @type
+    when 'image'
+      [self.src]
+    else
+      []
+    end
   end
 
 # Video element methods

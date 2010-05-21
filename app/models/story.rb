@@ -7,14 +7,29 @@ class Story
     if values[:xml]
       vals = {}
       vals[:title] = values[:xml].attributes['title'].text rescue nil
+      values[:xml].search('background').each do |bkelt|
+        if bkelt.attributes['image']
+          @background_image = bkelt.attributes['image']
+        end
+      end
       vals[:pages] = values[:xml].search("page").collect {|xml| Page.new(xml)}
       values = vals
     end
 
     @title = values[:title]
     @pages = values[:pages]
+    @pages.each_with_index {|page,idx| page.number = idx}
   end
 
+  def resources
+    res = []
+    res << @background_image if @background_image
+    self.pages.each do |page|
+      res += page.resources
+    end
+    res.flatten
+  end
+  
   def first_page
     @pages.first
   end

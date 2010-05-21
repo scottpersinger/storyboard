@@ -15,6 +15,8 @@ class SiteController < ApplicationController
     @prev_page = @story.prev_page(@page)
     @next_page = @story.next_page(@page)
 
-    render :action => :page
+    @pagenum = 0
+    
+    render :action => :story
   end
 end
