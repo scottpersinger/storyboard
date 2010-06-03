@@ -9,8 +9,9 @@ page-wrapper {
 
 body {
   background: #444 url(http://line25.com/wp-content/uploads/2009/letterpress/demo/bg.png);
-  margin:10px 60px;
   font-family: Georgia, Times, serif;
+  color:#999;
+  text-shadow: #2A2A2A 0px 3px 8px;
 }
 
 .next-button {
@@ -35,9 +36,13 @@ body {
   border:none;
 }
 
-body {
-  color:#999;
-  text-shadow: #2A2A2A 0px 3px 8px;
+.page-wrapper {
+  height:100%;
+  width:100%;
+}
+
+.text {
+  padding:10% 15%;
 }
 
 .tile-text {
@@ -87,9 +92,4 @@ body {
 .caption {
   min-height:0px;
   font-size:16px;
-}
-
-table td {
-  padding: 40px;
-  text-align:center;
 }

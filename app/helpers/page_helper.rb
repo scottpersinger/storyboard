@@ -32,4 +32,8 @@ module PageHelper
     }
 
   end
+
+  def render_tile_audio
+    "<audio here>"
+  end
 end

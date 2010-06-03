@@ -1,0 +1,36 @@
+** Daemonized, any open files are closed.  Look at log/mongrel.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:4000
+** Starting Rails with bug environment...
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:386:in `read': No such file or directory - /Users/scottp/github/storyboard/config/environments/bug.rb (Errno::ENOENT)
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:386:in `load_environment'
+	from /Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:379:in `load_environment'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:137:in `process'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:113:in `send'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:113:in `run'
+	from /Users/scottp/github/storyboard/config/environment.rb:9
+	from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	 ... 10 levels...
+	from /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /usr/bin/mongrel_rails:19:in `load'
+	from /usr/bin/mongrel_rails:19
+** Daemonized, any open files are closed.  Look at log/mongrel.pid and log/mongrel.log for info.
+** Starting Mongrel listening at 0.0.0.0:4000
+** Starting Rails with bugger environment...
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:386:in `read': No such file or directory - /Users/scottp/github/storyboard/config/environments/bugger.rb (Errno::ENOENT)
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:386:in `load_environment'
+	from /Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:379:in `load_environment'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:137:in `process'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:113:in `send'
+	from /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/initializer.rb:113:in `run'
+	from /Users/scottp/github/storyboard/config/environment.rb:9
+	from /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	 ... 10 levels...
+	from /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+	from /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+	from /usr/bin/mongrel_rails:19:in `load'
+	from /usr/bin/mongrel_rails:19

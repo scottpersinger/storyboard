@@ -1,20 +1,24 @@
-class Story
-  attr_accessor :pages, :title
+require 'nokogiri'
+
+class Story < ActiveRecord::Base
+  belongs_to :user
+
+  attr_accessor :pages
 
   # Values: :title, :pages => array of pages
   # Values: :xml => Nokogiri doc
-  def initialize(values)
-    if values[:xml]
-      vals = {}
-      vals[:title] = values[:xml].attributes['title'].text rescue nil
-      values[:xml].search('background').each do |bkelt|
-        if bkelt.attributes['image']
-          @background_image = bkelt.attributes['image']
-        end
+  def parse_body
+    return if @doc
+
+    @doc = Nokogiri.XML(self.body)
+    values = {}
+    values[:title] = @doc.attributes['title'].text rescue nil
+    @doc.search('background').each do |bkelt|
+      if bkelt.attributes['image']
+        @background_image = bkelt.attributes['image']
       end
-      vals[:pages] = values[:xml].search("page").collect {|xml| Page.new(xml)}
-      values = vals
     end
+    values[:pages] = @doc.search("page").collect {|xml| Page.new(xml)}
 
     @title = values[:title]
     @pages = values[:pages]
@@ -22,6 +26,8 @@ class Story
   end
 
   def resources
+    parse_body
+
     res = []
     res << @background_image if @background_image
     self.pages.each do |page|
@@ -31,6 +37,8 @@ class Story
   end
   
   def first_page
+    parse_body
+
     @pages.first
   end
   

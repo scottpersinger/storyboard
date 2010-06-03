@@ -1,0 +1,17 @@
+<div id="page_<%= page.number %>" class="page-wrapper">
+
+  <!--
+  <a href="#"><button class="prev-button"></button></a>
+
+  <a href="#"><button class="next-button"></button></a>
+  -->
+
+  <% page.tiles.each do |tile| %>
+
+    <%= render_tile tile, :last_col => (tile.last_col?) %>
+
+  <% end %>
+  
+</div>
+
+ 

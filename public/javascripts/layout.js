@@ -9,21 +9,23 @@ function size_text_tile(elt) {
 
   // make offscreen visible div to use for sizing
   var offdiv = $j('#offdiv')[0] ||
-    $j(document.body).append('<div id="offdiv" style="position:absolute;top:0;left:-2000px"></div>');
+    $j(document.body).append('<div id="offwrap" style="position:absolute;top:0;left:-2000px;background:red"><div id="offdiv" class="text"></div></div>');
 
   offdiv = $j('#offdiv');
+  var offwrap = $j('#offwrap');
 
   // Grow text to fill tile dimensions
-  var tile_height = tile.height();
+  var tile_height = tile.outerHeight();
   var text_div = tile.find('.text');
   
-  offdiv.css('width', tile.width() + 'px');
+  offwrap.css('width', tile.outerWidth() + 'px');
   offdiv.html(text_div.html());
 
-  console.log("tile height: " + tile_height + ", text height: " + $j(offdiv).height());
+  console.log("tile height: " + tile_height + ", text height: " + $j(offdiv).outerHeight());
   var i = 0;
-  for( i =0; (i<50 && $j(offdiv).height() < tile_height); i+= 1) {
+  for( i =0; (i<50 && $j(offdiv).outerHeight() < tile_height); i+= 1) {
     $j(offdiv).css('font-size', (12+i));
+    console.log("offdiv height: ", $j(offdiv).outerHeight());
     if (i > 10) {
       i+=1; // skip by 2 to be faster
     }
@@ -31,12 +33,12 @@ function size_text_tile(elt) {
   $j(text_div).css('font-size', (12+(i-1)));
 }
 
-function layout_row(divs_in_row, rowcount) {
-  var height_rem = 100 / rowcount;
+function layout_row(divs_in_row, height) {
   var width = 100.0 / divs_in_row.length;
   
   $j.each(divs_in_row, function() {
-    $j(this).css({width: width + '%', height: height_rem + '%', 'float': 'left'});
+    console.log("Laying out div (width: " + width + ", height: " + height + "): ", $j(this).html().substring(0,50));
+    $j(this).css({width: width + '%', height: height + '%', 'float': 'left'});
     if (this == divs_in_row[divs_in_row.length-1]) {
       $j(this).addClass('clearfix');
     }
@@ -45,35 +47,55 @@ function layout_row(divs_in_row, rowcount) {
 
 function layout_tiles(page) {
   page = $j(page);
+  $j(document.body).height($j(window).height());
 
   var rowcount = $j(page).find('.tile').filter('.last').length;
   if (!$j(page).find('.tile:last').hasClass('last')) {
     rowcount++;
   }
 
+  var rowset = [];
   var divs_in_row = [];
   var last_tile = page.find('.tile:last')[0];
 
   page.find('.tile').each(function() {
     divs_in_row.push(this);
     if ($j(this).hasClass('last') || this == last_tile) {
-      layout_row(divs_in_row, rowcount);
-      divs_in_rows = [];
+      rowset.push(divs_in_row);
+      divs_in_row = [];
     }
   });
+
+  var rowheights = {};
+  var footnote_count = 0;
+
+  $j.each(rowset, function(index) {
+    if ($j(this).filter('.footnote').length == this.length) {
+      rowheights[index] = 15;
+      footnote_count++;
+    }
+  });
+
+  var remainder = (100 - (15 * footnote_count)) / (rowset.length - footnote_count);
+
+  $j.each(rowset, function(index) {
+    var h = rowheights[index] || remainder;
+    layout_row(this, h);
+  });
 }
+
 
 var $current_page = null;
 
 function show_page(pagenum) {
   $j('.page-wrapper').hide();
   var page = $j('#page_' + pagenum);
-
-  //page.css('visibility:hidden');
-  //page.find('.tile-text').each(function() {size_text_tile(this)});
-  layout_tiles(page);
-
   page.show();
+  //page.css('visibility:hidden');
+
+  layout_tiles(page);
+  page.find('.tile-text').each(function() {size_text_tile(this)});
+
 
   $current_page = pagenum;
 }
